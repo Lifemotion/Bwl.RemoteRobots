@@ -4,33 +4,30 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FB306EFE-FA08-4633-AFCF-8AA411048CCA}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <StartupObject>Bwl.RemoteRobots.ControlCenter.My.MyApplication</StartupObject>
-    <RootNamespace>Bwl.RemoteRobots.ControlCenter</RootNamespace>
-    <AssemblyName>Bwl.RemoteRobots.ControlCenter</AssemblyName>
+    <ProjectGuid>{FB7B5D47-E48D-4252-AB22-EDF0F61F435F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bwl.RemoteRobots.Host</RootNamespace>
+    <AssemblyName>Bwl.RemoteRobots.Host</AssemblyName>
     <FileAlignment>512</FileAlignment>
-    <MyType>WindowsForms</MyType>
+    <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>..\debug\Remote Robot Control Center\bin\</OutputPath>
-    <DocumentationFile>Bwl.RemoteRobots.ControlCenter.xml</DocumentationFile>
+    <OutputPath>..\debug\dll\</OutputPath>
+    <DocumentationFile>Bwl.RemoteRobots.Host.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>..\release\Remote Robot Control Center\bin\</OutputPath>
-    <DocumentationFile>Bwl.RemoteRobots.ControlCenter.xml</DocumentationFile>
+    <OutputPath>..\release\dll\</OutputPath>
+    <DocumentationFile>Bwl.RemoteRobots.Host.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -46,45 +43,16 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Core" />
-    <Reference Include="Bwl.Framework">
+    <Reference Include="Bwl.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\refs\bwl-framework\Bwl.Framework.dll</HintPath>
     </Reference>
-    <Reference Include="bwl.Network.ClientServer">
+    <Reference Include="bwl.Network.ClientServer, Version=1.0.15174.5, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\refs\bwl-framework\bwl.Network.ClientServer.dll</HintPath>
     </Reference>
-    <Reference Include="Bwl.Hardware.Serial">
-      <HintPath>..\refs\bwl-hardware-serial\Bwl.Hardware.Serial.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Hardware.Serial.FTDIDevice">
-      <HintPath>..\refs\bwl-hardware-serial\Bwl.Hardware.Serial.FTDIDevice.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Hardware.SimplSerial">
-      <HintPath>..\refs\bwl-hardware-serial\Bwl.Hardware.SimplSerial.dll</HintPath>
-    </Reference>
-    <Reference Include="FTD2XX_NET">
-      <HintPath>..\refs\bwl-hardware-serial\FTD2XX_NET.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Imaging">
-      <HintPath>..\refs\bwl-imaging\Bwl.Imaging.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Imaging.Unsafe">
-      <HintPath>..\refs\bwl-imaging\Bwl.Imaging.Unsafe.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Imaging.WinForms">
-      <HintPath>..\refs\bwl-imaging\Bwl.Imaging.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Network.Transport">
-      <HintPath>..\refs\bwl-network-transport\Bwl.Network.Transport.dll</HintPath>
-    </Reference>
-    <Reference Include="Bwl.Video">
-      <HintPath>..\refs\bwl-video\Bwl.Video.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -92,20 +60,14 @@
     <Import Include="System.Collections" />
     <Import Include="System.Collections.Generic" />
     <Import Include="System.Data" />
-    <Import Include="System.Drawing" />
     <Import Include="System.Diagnostics" />
-    <Import Include="System.Windows.Forms" />
     <Import Include="System.Linq" />
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlCenterApp.Designer.vb">
-      <DependentUpon>ControlCenterApp.vb</DependentUpon>
+    <Compile Include="..\Bwl.RemoteRobots.ControlCenter\RobotService.vb">
+      <Link>RobotService.vb</Link>
     </Compile>
-    <Compile Include="ControlCenterApp.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="HubControlClient.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -121,12 +83,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RobotService.vb" />
+    <Compile Include="HubClient.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlCenterApp.resx">
-      <DependentUpon>ControlCenterApp.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -145,7 +104,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <!--PRJREFS-->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

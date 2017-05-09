@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.Bwl.RemoteRobots.ControlCenter.ControlCenterApp
+            Me.MainForm = Global.Bwl.RemoteRobots.Host.Test.RobotEmulatorApp
         End Sub
     End Class
 End Namespace
