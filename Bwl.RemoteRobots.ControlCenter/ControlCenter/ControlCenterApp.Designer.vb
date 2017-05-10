@@ -50,6 +50,7 @@ Partial Class ControlCenterApp
         Me.tbShortStatusText = New System.Windows.Forms.TextBox()
         Me.tbShortHostInfo = New System.Windows.Forms.TextBox()
         Me.tScanLocalServers = New System.Windows.Forms.Timer(Me.components)
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.gbHub.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -171,6 +172,7 @@ Partial Class ControlCenterApp
         '
         'gbTargets
         '
+        Me.gbTargets.Controls.Add(Me.Button1)
         Me.gbTargets.Controls.Add(Me.bFindTargets)
         Me.gbTargets.Controls.Add(Me.lbTargets)
         Me.gbTargets.Enabled = False
@@ -311,6 +313,15 @@ Partial Class ControlCenterApp
         Me.tScanLocalServers.Enabled = True
         Me.tScanLocalServers.Interval = 2000
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(102, 65)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(75, 23)
+        Me.Button1.TabIndex = 19
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'ControlCenterApp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -367,4 +378,5 @@ Partial Class ControlCenterApp
     Friend WithEvents Port As DataGridViewTextBoxColumn
     Friend WithEvents Host As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Button1 As Button
 End Class
