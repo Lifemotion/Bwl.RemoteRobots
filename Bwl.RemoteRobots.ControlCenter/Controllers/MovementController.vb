@@ -1,3 +1,3 @@
-﻿Public Class MoveController
+﻿Public Class MovementController
 
 End Class

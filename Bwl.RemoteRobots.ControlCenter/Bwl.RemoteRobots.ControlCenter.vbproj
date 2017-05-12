@@ -105,14 +105,20 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlCenterApp.Designer.vb">
+    <Compile Include="ControlCenter\ControlCenterApp.Designer.vb">
       <DependentUpon>ControlCenterApp.vb</DependentUpon>
     </Compile>
-    <Compile Include="ControlCenterApp.vb">
+    <Compile Include="ControlCenter\ControlCenterApp.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HubControlClient.vb" />
-    <Compile Include="Joysticks.vb" />
+    <Compile Include="ControlCenter\HubControlClient.vb" />
+    <Compile Include="Controllers\MovementController.Designer.vb">
+      <DependentUpon>MovementController.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\MovementController.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tools\DxInputJoysticks.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -128,10 +134,10 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RobotService.vb" />
+    <Compile Include="ControlCenter\RobotService.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ControlCenterApp.resx">
+    <EmbeddedResource Include="ControlCenter\ControlCenterApp.resx">
       <DependentUpon>ControlCenterApp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -152,6 +158,7 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <!--PRJREFS-->
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
